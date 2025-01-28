@@ -7,7 +7,7 @@ I lived in Belgium, Oman, Netherlands, and currently USA.
 
 ## Hobbies ##
 I spend most of my free time watching sports like football (or **soccer**bold) or listening to Music
-"([(https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/14af/live/4746c2d0-db49-11ef-9eb4-3bff3a5c608d.jpg.webp)])
+"((https://ichef.bbci.co.uk/ace/standard/800/cpsprodpb/14af/live/4746c2d0-db49-11ef-9eb4-3bff3a5c608d.jpg.webp)"
 
 
 ## My policy interest ##
