@@ -14,6 +14,6 @@ Therefore, I am currently reading  about technology and [Bank-performance](https
 Recently, I got interested in the impact of microfinance on small business growth using mobile banking and microfinance system. I found its effect was extremly great, but there are many challenges when it comes to implementing the policy. 
 Therefore, figuring out the gap between the effect of digitized banking/tech-microfinance and policy implementation is one that i would like to focus on during this summer.
 ## My vacation plan ##
-I am planning to visit ![San Francisco](https://images.squarespace-cdn.com/content/v1/5c7f5f60797f746a7d769cab/d1466e73-4bff-4821-a7b3-76d688d440e2/the+golden+gate+bridge+san+francisco.jpg?format=2500w) since I have never been to west side yet, and I am very looking forward traveling other states!
+I am planning to visit San Francisco![San Francisco](https://images.squarespace-cdn.com/content/v1/5c7f5f60797f746a7d769cab/d1466e73-4bff-4821-a7b3-76d688d440e2/the+golden+gate+bridge+san+francisco.jpg?format=2500w) since I have never been to west side yet, and I am very looking forward traveling other states!
 
 ### Thank you for reading my bio! ###
