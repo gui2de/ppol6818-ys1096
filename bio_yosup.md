@@ -8,7 +8,11 @@ I lived in Belgium, Oman, Netherlands, and currently USA
 I usually spend my free time watching sports like football (or **soccer** for someone) or listening to music
 
 ## My policy interest ##
-I am currently interested in microfinance and political economcy, and this requires lots of reading and backgroud study. 
+I am currently interested in 
+* microfinance 
+* political economcy
+* Use of AI/Technology in Internation development 
+ and this requires lots of reading and backgroud study. 
 
 Therefore, I am currently reading  about technology and [Bank-performance](https://www.sciencedirect.com/science/article/pii/S105752192400632X). which is very interesting article
 Recently, I got interested in the impact of microfinance on small business growth using mobile banking and microfinance system. I found its effect was extremly great, but there are many challenges when it comes to implementing the policy. 
