@@ -46,8 +46,6 @@ Results are presented in two parts:
 ### 🔹 Part 2: Summary (`N = 4` to `2,097,152`)
 ![Boxplot](./boxpart2.png)
 
-- **Error Bar Graph**: Rapid convergence of β to `2.0`.  
-  After `N > 1,000`, the variation becomes almost invisible.
 ![Histogram](./Histopart2.png)
 - **Density Plots**: With very large N, the histograms become **extremely sharp peaks**, nearly vertical at `β = 2.0`.
 
