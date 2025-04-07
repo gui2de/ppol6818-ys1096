@@ -3,61 +3,60 @@
 * Part 1: Power calculations
 // step 1
 
-clear 
-set seed 0426 
+clear
+set seed 0426
+
 capture program drop assignment4
-program define assignment4
-	syntax, obs(integer) varname(string) mean(real) sd(real)
-	
-	clear 
-	set obs `obs'
-	gen `varname' = rnormal(`mean',`sd')
-	
-	    // Treatment assignment (50% treated)
-    gen treatment = runiform() < 0.5
-	
-    // Generate treatment effects (uniform between 0-0.2 sd), this will have average of 0.1 effect
-    gen effect = 0
-    replace effect = runiform() * 0.2 if treatment == 1
-	
-	    // Apply effect to outcome
-    replace `varname' = `varname' + effect if treatment == 1
-	
+program define assignment4, rclass
+    syntax, obs(integer)
+
+    clear
+    set obs `obs'
+
+    // Assign 50% to treatment
+    gen rand = runiform()
+    sort rand
+    gen treat = 0
+    replace treat = 1 if _n <= `obs'/2
+
+    // Outcome: baseline noise + treatment effect (avg 0.1)
+    gen y = rnormal(0, 1) + treat * runiform(0, 0.2)
+
+    // Simulate 15% attrition
+    gen dropout = runiform()
+    replace y = . if dropout < 0.15
+
+    // Estimate treatment effect
+    reg y treat
+    matrix a = r(table)
+    return scalar coef = a[1,1]
+    return scalar pval = a[4,1]
 end
 
-assignment4, obs(100) varname(Y)  mean(0) sd(0.1)
 
-//Step 3: calculate the required sample size for 80% power 
+clear
+tempfile results_q1
+save `results_q1', replace emptyok
 
-power twomeans 0 0.1, sd(1) power(0.8)
+forvalues i = 3000(100)3800 {
+    simulate coef=r(coef) pvalue=r(pval), reps(500): ///
+        assignment4, obs(`i')
 
-/* Performing iteration ...
+    gen samplesize = `i'
+    append using `results_q1'
+    save `results_q1', replace 
+}
 
-Estimated sample sizes for a two-sample means test
-t test assuming sd1 = sd2 = sd
-H0: m2 = m1  versus  Ha: m2 != m1
+use `results_q1', clear
+gen sig = (pvalue < 0.05)
 
-Study parameters:
+collapse (mean) power = sig, by(samplesize)
+list, clean
 
-        alpha =    0.0500
-        power =    0.8000
-        delta =    0.1000
-           m1 =    0.0000
-           m2 =    0.1000
-           sd =    1.0000
+twoway line power samplesize, msymbol(circle) ///
+    title("Power vs Sample Size (50% Treated, 15% Attrition)") ///
+    ytitle("Power") xtitle("Sample Size")
 
-Estimated sample sizes:
-
-            N =     3,142
-  N per group =     1,571
-
-. 
-end of do-file */
-
-// Step 4: 15% of the sample will attrite 
-
-// step 5:
-power twomeans 0 0.1, sd(1) power(0.8) allocation(0.3 0.7)
 
 
 // PART 2 — Power Simulation for Cluster Randomization
