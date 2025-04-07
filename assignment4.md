@@ -8,7 +8,7 @@ By setting up the covariates the way we did, we ensured that:
 
 This setup creates overlap where some covariates are **confounders** (affect both treatment and outcome), while others are either **instruments** (affect only treatment) or **pure predictors** (affect only outcome). This makes the regression more realistic and highlights the role of covariate selection.
 
-### 🧪 Approach
+### Approach
 
 We estimated **five regression models** across increasing sample sizes to assess:
 - **Bias in the treatment effect estimate (beta)**
@@ -34,7 +34,7 @@ Below are the coefficient plots for each model.
 
 ---
 
-#### 📦 Model 1: No controls
+#### Model 1: No controls
 
 ![](assignment4_part3_boxplot_model1.png)
 
@@ -42,23 +42,23 @@ Below are the coefficient plots for each model.
 
 ---
 
-#### 📦 Model 2: Add Confounder
+#### Model 2: Add Confounder
 
 ![](assignment4_part3_boxplot_model2.png)
 
-> ✅ **Improved bias** and tighter distribution even at moderate N. Shows value of adjusting for confounders.
+>  **Improved bias** and tighter distribution even at moderate N. Shows value of adjusting for confounders.
 
 ---
 
-#### 📦 Model 3: Add Outcome-only Covariate
+####  Model 3: Add Outcome-only Covariate
 
 ![](assignment4_part3_boxplot_model3.png)
 
-> 🧮 **Further reduction** in variance. Doesn't directly reduce bias, but improves efficiency.
+>  **Further reduction** in variance. Doesn't directly reduce bias, but improves efficiency.
 
 ---
 
-#### 📦 Model 4: Add Instrument-only Covariate
+#### Model 4: Add Instrument-only Covariate
 
 ![](assignment4_part3_boxplot_model4.png)
 
@@ -66,11 +66,11 @@ Below are the coefficient plots for each model.
 
 ---
 
-#### 📦 Model 5: Add Strata Fixed Effects
+####  Model 5: Add Strata Fixed Effects
 
 ![](assignment4_part3_boxplot_model5.png)
 
-> 🌟 **Best performance overall**. Least biased and lowest variance even at small-to-mid N.
+> **Best performance overall**. Least biased and lowest variance even at small-to-mid N.
 
 ---
 
